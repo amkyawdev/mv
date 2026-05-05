@@ -1,6 +1,6 @@
 'use client';
 
-import Navigation from '@/components/Navigation';
+import Navigation from '../components/Navigation';
 import { ChevronRight } from 'lucide-react';
 
 export default function DocsPage() {

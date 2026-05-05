@@ -1,13 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@400;500;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --font-display: 'Space Mono', monospace;
   --font-body: 'Sora', sans-serif;
-  color-scheme: dark;
+  --bg-dark: #0a0a0a;
+  --bg-darker: #000000;
+  --text-dark: #f0f0f0;
+  --neon-blue: #00d9ff;
+  --neon-gold: #ffd700;
+  --glass-white: rgba(255,255,255,0.05);
+  --glass-border: rgba(255,255,255,0.1);
+  --dark-surface: rgba(255,255,255,0.05);
+  --dark-border: rgba(255,255,255,0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -15,11 +25,77 @@ html {
 }
 
 body {
-  @apply bg-dark-bg text-dark-text overflow-x-hidden;
-  background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+  background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 50%, var(--bg-darker) 100%);
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Smooth page transitions */
+/* Navigation */
+nav {
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 1rem;
+}
+
+nav a {
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: color 0.3s;
+  margin: 0 1rem;
+}
+
+nav a:hover {
+  color: var(--neon-blue);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, var(--neon-blue), #0099cc);
+  color: #000;
+  padding: 12px 24px;
+  border-radius: 8px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 20px rgba(0, 217,255,0.5);
+  transform: scale(1.02);
+}
+
+/* Containers */
+.glass {
+  background: var(--glass-white);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+}
+
+/* Sections */
+section {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Animations */
 @keyframes pageEnter {
   from {
     opacity: 0;
@@ -35,10 +111,9 @@ main {
   animation: pageEnter 0.6s ease-out;
 }
 
-/* Custom scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
-  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -54,108 +129,35 @@ main {
   background: rgba(0, 217, 255, 0.5);
 }
 
-/* Glass morphism base */
-.glass {
-  @apply bg-glass-white backdrop-blur-glass border border-glass-border rounded-lg;
+/* Headings */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  margin-bottom: 1rem;
 }
 
-.glass-lg {
-  @apply bg-glass-white backdrop-blur-glass-lg border border-glass-border rounded-xl;
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
-/* Neon glow effects */
-.glow-blue {
-  @apply shadow-neon-blue;
+/* Features */
+.feature-card {
+  padding: 2rem;
+  background: var(--glass-white);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  transition: all 0.3s;
 }
 
-.glow-gold {
-  @apply shadow-neon-gold;
-}
-
-/* Button base styles */
-.btn-base {
-  @apply px-6 py-2.5 rounded-lg font-medium transition-all duration-300 ease-out;
-  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neon-blue;
-}
-
-.btn-primary {
-  @apply btn-base bg-gradient-to-r from-neon-blue to-neon-blue-dark text-black hover:shadow-neon-blue hover:shadow-glow-blue;
-  @apply transform hover:scale-105 active:scale-95;
-}
-
-.btn-secondary {
-  @apply btn-base border border-glass-border text-dark-text hover:border-neon-blue hover:text-neon-blue;
-  @apply bg-glass-white hover:bg-glass-white;
-}
-
-.btn-tertiary {
-  @apply btn-base text-neon-blue hover:text-soft-gold transition-colors;
-}
-
-/* Form elements */
-input, textarea, select {
-  @apply bg-dark-surface border border-dark-border rounded-lg px-4 py-2.5;
-  @apply text-dark-text placeholder-gray-600 transition-colors duration-200;
-  @apply focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue;
-}
-
-textarea {
-  @apply resize-none font-mono;
-}
-
-/* Dropdown styles */
-.dropdown-base {
-  @apply glass rounded-lg p-4 space-y-3;
-}
-
-/* Loading skeleton */
-.skeleton {
-  @apply animate-pulse bg-dark-surface rounded;
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--neon-blue);
 }
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #00d9ff, #ffd700);
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-gold));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-/* Modal backdrop */
-.modal-backdrop {
-  @apply fixed inset-0 bg-black/50 backdrop-blur-md z-40;
-}
-
-/* Smooth hover lift */
-.hover-lift {
-  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-glass;
-}
-
-/* Stagger animation for lists */
-@keyframes stagger {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.stagger-item {
-  animation: stagger 0.6s ease-out backwards;
-}
-
-.stagger-item:nth-child(1) { animation-delay: 0.1s; }
-.stagger-item:nth-child(2) { animation-delay: 0.2s; }
-.stagger-item:nth-child(3) { animation-delay: 0.3s; }
-.stagger-item:nth-child(4) { animation-delay: 0.4s; }
-.stagger-item:nth-child(5) { animation-delay: 0.5s; }
-
-/* Responsive utilities */
-@media (max-width: 768px) {
-  body {
-    font-size: 16px; /* Prevents zoom on input focus on iOS */
-  }
 }

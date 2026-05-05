@@ -4,12 +4,10 @@ import { useState, useRef } from 'react';
 import {
   ChevronDown,
   Download,
-  Play,
-  Pause,
-  Volume2,
   Settings,
   Eye,
   Upload,
+  Sparkles,
 } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 

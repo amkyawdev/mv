@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Space Mono', monospace;
+  --font-body: 'Sora', sans-serif;
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-dark-bg text-dark-text overflow-x-hidden;
+  background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+}
+
+/* Smooth page transitions */
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main {
+  animation: pageEnter 0.6s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 217, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 217, 255, 0.5);
+}
+
+/* Glass morphism base */
+.glass {
+  @apply bg-glass-white backdrop-blur-glass border border-glass-border rounded-lg;
+}
+
+.glass-lg {
+  @apply bg-glass-white backdrop-blur-glass-lg border border-glass-border rounded-xl;
+}
+
+/* Neon glow effects */
+.glow-blue {
+  @apply shadow-neon-blue;
+}
+
+.glow-gold {
+  @apply shadow-neon-gold;
+}
+
+/* Button base styles */
+.btn-base {
+  @apply px-6 py-2.5 rounded-lg font-medium transition-all duration-300 ease-out;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neon-blue;
+}
+
+.btn-primary {
+  @apply btn-base bg-gradient-to-r from-neon-blue to-neon-blue-dark text-black hover:shadow-neon-blue hover:shadow-glow-blue;
+  @apply transform hover:scale-105 active:scale-95;
+}
+
+.btn-secondary {
+  @apply btn-base border border-glass-border text-dark-text hover:border-neon-blue hover:text-neon-blue;
+  @apply bg-glass-white hover:bg-glass-white;
+}
+
+.btn-tertiary {
+  @apply btn-base text-neon-blue hover:text-soft-gold transition-colors;
+}
+
+/* Form elements */
+input, textarea, select {
+  @apply bg-dark-surface border border-dark-border rounded-lg px-4 py-2.5;
+  @apply text-dark-text placeholder-gray-600 transition-colors duration-200;
+  @apply focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue;
+}
+
+textarea {
+  @apply resize-none font-mono;
+}
+
+/* Dropdown styles */
+.dropdown-base {
+  @apply glass rounded-lg p-4 space-y-3;
+}
+
+/* Loading skeleton */
+.skeleton {
+  @apply animate-pulse bg-dark-surface rounded;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #00d9ff, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  @apply fixed inset-0 bg-black/50 backdrop-blur-md z-40;
+}
+
+/* Smooth hover lift */
+.hover-lift {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-glass;
+}
+
+/* Stagger animation for lists */
+@keyframes stagger {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-item {
+  animation: stagger 0.6s ease-out backwards;
+}
+
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+.stagger-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Prevents zoom on input focus on iOS */
+  }
+}

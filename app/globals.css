@@ -321,3 +321,116 @@ video {
 .border-neon-blue { border-color: #00d9ff; }
 .bg-neon-blue-10 { background: rgba(0,217,255,0.1); }
 .hover-border-neon-blue-50:hover { border-color: rgba(0,217,255,0.5); }
+
+/* More spacing utilities */
+.p-12 { padding: 3rem; }
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.text-xs { font-size: 0.75rem; }
+.text-xl { font-size: 1.25rem; }
+.h-2 { height: 0.5rem; }
+.w-full { width: 100%; }
+
+/* Progress bar */
+.h-full { height: 100%; }
+.rounded-full { border-radius: 9999px; }
+.transition-all { transition: all 0.3s; }
+.duration-300 { transition-duration: 0.3s; }
+
+/* Hover effects */
+.text-soft-gold:hover { color: #ffd700; }
+.hover-text-neon-blue:hover { color: #00d9ff; }
+
+/* Glass effect */
+.glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.glass:hover {
+  border-color: rgba(0,217,255,0.5);
+}
+
+/* Animations */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Upload area specific */
+.upload-area {
+  border: 2px dashed rgba(255,255,255,0.1);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.upload-area:hover {
+  border-color: rgba(0,217,255,0.5);
+}
+.upload-area.dragging {
+  border-color: #00d9ff;
+  background: rgba(0,217,255,0.1);
+}
+
+/* Subtitle list */
+.subtitle-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+.subtitle-item {
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 8px;
+  border: 1px solid transparent;
+}
+.subtitle-item:hover {
+  border-color: rgba(0,217,255,0.3);
+}
+.subtitle-item.active {
+  border-color: #00d9ff;
+  background: rgba(0,217,255,0.1);
+}
+
+/* Video controls container */
+.video-container {
+  background: rgba(0,0,0,0.5);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+/* Control buttons */
+.control-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #f0f0f0;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.control-btn:hover {
+  background: rgba(0,217,255,0.2);
+  border-color: #00d9ff;
+}
+
+/* Render button */
+.render-btn {
+  background: linear-gradient(135deg, #00d9ff, #ffd700);
+  color: #000;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.render-btn:hover {
+  box-shadow: 0 0 30px rgba(0,217,255,0.5);
+  transform: scale(1.02);
+}

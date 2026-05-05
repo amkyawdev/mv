@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight, Zap, Palette, Sparkles } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import Navigation from '@/components/Navigation';
+import Navigation from '../components/Navigation';
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);

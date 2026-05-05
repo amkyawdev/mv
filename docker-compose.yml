@@ -1,0 +1,46 @@
+version: '3.9'
+
+services:
+  # FFmpeg processing service
+  processor:
+    build:
+      context: ./docker/processor
+      dockerfile: Dockerfile
+    container_name: movie-recap-processor
+    ports:
+      - '5000:5000'
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=app.py
+      - MAX_FILE_SIZE=2147483648  # 2GB in bytes
+      - PROCESSING_TIMEOUT=3600   # 1 hour
+    volumes:
+      - ./public/uploads:/app/uploads
+      - ./public/downloads:/app/downloads
+      - processor_cache:/app/cache
+    networks:
+      - movie-recap-network
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:5000/health']
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: Redis for job queue (uncomment if needed for scaling)
+  # redis:
+  #   image: redis:7-alpine
+  #   container_name: movie-recap-redis
+  #   ports:
+  #     - '6379:6379'
+  #   networks:
+  #     - movie-recap-network
+  #   restart: unless-stopped
+
+volumes:
+  processor_cache:
+
+networks:
+  movie-recap-network:
+    driver: bridge

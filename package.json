@@ -1,0 +1,36 @@
+{
+  "name": "movie-recap-app",
+  "version": "1.0.0",
+  "description": "Premium AI-powered movie recap platform with subtitle editing",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down"
+  },
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.3.0",
+    "lucide-react": "^0.292.0",
+    "axios": "^1.5.0",
+    "srt-parser-2": "^1.2.3",
+    "zustand": "^4.4.0",
+    "framer-motion": "^10.16.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.0",
+    "@types/node": "^20.5.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.28",
+    "eslint": "^8.48.0",
+    "eslint-config-next": "^14.0.0"
+  }
+}

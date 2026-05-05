@@ -3,7 +3,6 @@
 import { useState, useRef } from 'react';
 import {
   ChevronDown,
-  X,
   Download,
   Play,
   Pause,

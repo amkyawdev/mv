@@ -9,7 +9,7 @@ import {
   Upload,
   Sparkles,
 } from 'lucide-react';
-import Navigation from './components/Navigation';
+import Navigation from '../components/Navigation';
 
 interface Subtitle {
   index: number;

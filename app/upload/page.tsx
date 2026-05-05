@@ -2,7 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { Upload, CheckCircle, AlertCircle, Loader } from 'lucide-react';
-import Navigation from './components/Navigation';
+import Navigation from '../components/Navigation';
 import Link from 'next/link';
 
 interface UploadedFile {

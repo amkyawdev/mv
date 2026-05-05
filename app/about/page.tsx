@@ -1,6 +1,6 @@
 'use client';
 
-import Navigation from './components/Navigation';
+import Navigation from '../components/Navigation';
 import { Github, ExternalLink, Code2, Zap, Lock } from 'lucide-react';
 
 export default function AboutPage() {

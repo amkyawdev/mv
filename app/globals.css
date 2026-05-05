@@ -434,3 +434,78 @@ video {
   box-shadow: 0 0 30px rgba(0,217,255,0.5);
   transform: scale(1.02);
 }
+/* Force dark styling */
+body { background: #000 !important; }
+
+main { 
+  background: #000; 
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.upload-area, .glass {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.upload-area:hover {
+  border-color: #00d9ff !important;
+  background: rgba(0,217,255,0.05) !important;
+}
+
+/* Headings */
+h1 {
+  font-size: 2rem;
+  color: #f0f0f0;
+  font-family: "Space Mono", monospace;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #f0f0f0;
+}
+
+/* Text */
+p, span, div {
+  color: #a0a0a0;
+}
+
+/* Form elements */
+input[type="text"], input[type="file"] {
+  background: rgba(255,255,255,0.1) !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  color: #f0f0f0 !important;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(135deg, #00d9ff, #0099cc) !important;
+  color: #000 !important;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+}
+
+button:hover {
+  box-shadow: 0 0 20px rgba(0,217,255,0.5) !important;
+}
+
+/* Drop zone */
+.drop-zone {
+  border: 2px dashed rgba(255,255,255,0.2) !important;
+  padding: 3rem;
+  text-align: center;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.drop-zone:hover {
+  border-color: #00d9ff !important;
+  background: rgba(0,217,255,0.1);
+}

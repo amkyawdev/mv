@@ -8,8 +8,6 @@ const navItems = [
   { href: '/', label: 'Home', icon: Play, mobile: true },
   { href: '/upload', label: 'Upload', icon: Upload, mobile: true },
   { href: '/editor', label: 'Editor', icon: Settings, mobile: true },
-  { href: '/docs', label: 'Docs', icon: BookOpen, mobile: false },
-  { href: '/about', label: 'About', icon: User, mobile: false },
 ];
 
 export default function Navigation() {

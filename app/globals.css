@@ -1200,3 +1200,38 @@ h1 {
   transform: translateY(-4px) !important;
   box-shadow: 0 10px 40px rgba(0,217,255,0.2) !important;
 }
+
+/* Make text super visible for screenshots */
+body {
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+
+h1, h2, h3, h4 {
+  color: #ffffff !important;
+}
+
+.text-gray-400 {
+  color: #cccccc !important;
+}
+
+.text-dark-text {
+  color: #ffffff !important;
+}
+
+.glass {
+  background: rgba(30,30,30,0.9) !important;
+  border: 1px solid #444 !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00d9ff, #0099cc) !important;
+  color: #000 !important;
+  font-weight: bold !important;
+}
+
+.btn-secondary {
+  background: transparent !important;
+  color: #fff !important;
+  border: 2px solid #666 !important;
+}

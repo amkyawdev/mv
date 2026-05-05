@@ -905,9 +905,9 @@ input[type="checkbox"] {
 .text-black { color: #000; }
 
 /* Background colors with opacity */
-.bg-neon-blue\\/10 { background: rgba(0,217,255,0.1); }
-.bg-neon-blue\\/20 { background: rgba(0,217,255,0.2); }
-.bg-neon-blue\\/30 { background: rgba(0,217,255,0.3); }
+.bg-neon-blue\\-10 { background: rgba(0,217,255,0.1); }
+.bg-neon-blue\\-20 { background: rgba(0,217,255,0.2); }
+.bg-neon-blue\\-30 { background: rgba(0,217,255,0.3); }
 .bg-dark-surface { background: rgba(255,255,255,0.05); }
 .bg-dark-border { background: rgba(255,255,255,0.1); }
 
@@ -919,11 +919,11 @@ input[type="checkbox"] {
 
 /* Border with opacity */
 .border-dark-border { border-color: rgba(255,255,255,0.1); }
-.hover-border-neon-blue\\/50:hover { border-color: rgba(0,217,255,0.5); }
+.hover-border-neon-blue\\-50:hover { border-color: rgba(0,217,255,0.5); }
 
 /* Hover states */
 .hover-text-neon-blue:hover { color: #00d9ff; }
-.hover-bg-neon-blue\\/10:hover { background: rgba(0,217,255,0.1); }
+.hover-bg-neon-blue\\-10:hover { background: rgba(0,217,255,0.1); }
 
 /* Cursor */
 .cursor-pointer { cursor: pointer; }

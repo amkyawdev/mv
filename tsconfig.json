@@ -29,6 +29,6 @@
     },
     "ignoreDeprecations": "6.0"
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "globals.css"],
   "exclude": ["node_modules", ".next", "dist"]
 }
